@@ -90,13 +90,19 @@ class Loader extends PluginBase {
 
                             case "addpoints":
 
-                                if (isset($args[1]) && isset($args[2])) {
+                                if ($sender->hasPermission("fac.command.admin")) {
 
-                                    $facname = $args[1];
-                                    $int = $args[2];
+                                    if (isset($args[1]) && isset($args[2])) {
 
-                                    $this->addPoints($facname, $int, $sender);
+                                        $facname = $args[1];
+                                        $int = $args[2];
 
+                                        $this->addPoints($facname, $int, $sender);
+
+                                    }
+
+                                } else {
+                                    $sender->sendMessage(TF::RED . "You have no permission to use this command!");
                                 }
 
                                 return true;
@@ -104,13 +110,19 @@ class Loader extends PluginBase {
 
                             case "deductpoints":
 
-                                if (isset($args[1]) && isset($args[2])) {
+                                if ($sender->hasPermission("fac.command.admin")) {
 
-                                    $facname = $args[1];
-                                    $int = $args[2];
+                                    if (isset($args[1]) && isset($args[2])) {
 
-                                    $this->deductPoints($facname, $int, $sender);
+                                        $facname = $args[1];
+                                        $int = $args[2];
 
+                                        $this->deductPoints($facname, $int, $sender);
+
+                                    }
+
+                                } else {
+                                    $sender->sendMessage(TF::RED . "You have no permission to use this command!");
                                 }
 
                                 return true;
@@ -122,6 +134,8 @@ class Loader extends PluginBase {
                         $sender->sendMessage(TF::GREEN . "[USAGE] /fac <create:top:get:addpoints:deductpoints>");
                     }
 
+                } else {
+                    $sender->sendMessage(TF::RED . "You have no permission to use this command!");
                 }
 
                 return true;

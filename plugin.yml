@@ -10,3 +10,5 @@ commands:
 permissions:
   fac.command:
     default: true
+  fac.command.admin:
+    default: op
