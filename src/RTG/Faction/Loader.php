@@ -99,6 +99,8 @@ class Loader extends PluginBase {
 
                                         $this->addPoints($facname, $int, $sender);
 
+                                    } else {
+                                        $sender->sendMessage(TF::GREEN . "[USAGE] /fac addpoints [facname] [point]");
                                     }
 
                                 } else {
@@ -119,6 +121,8 @@ class Loader extends PluginBase {
 
                                         $this->deductPoints($facname, $int, $sender);
 
+                                    } else {
+                                        $sender->sendMessage(TF::GREEN . "[USAGE] /fac deductpoints [facname] [point]");
                                     }
 
                                 } else {
