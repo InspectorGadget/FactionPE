@@ -1,0 +1,12 @@
+name: Faction
+main: RTG\Faction\Loader
+version: 1.0.0
+api: 3.0.0-ALPHA8
+author: IG
+commands:
+  fac:
+    description: "Hello"
+    permission: fac.command
+permissions:
+  fac.command:
+    default: true
